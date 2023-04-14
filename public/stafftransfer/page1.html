@@ -1,0 +1,28 @@
+<head>
+<script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+</head>
+<body>
+<h1>page1</h1>
+
+<p>nama:</p>
+<input type="text" id="input_name"/>
+<p>no. kuasa pertukaran</p>
+<input type="text" id="input_kuasa"/>
+<br/>
+<br/>
+<button id="btn_next" onclick="go_next()">seterusnya</button>
+
+
+<script>
+function go_next(){
+    var objtStaff={
+        name: $('#input_name').val(),
+        kuasa: $('#input_kuasa').val()
+    }
+
+    sessionStorage.setItem('kuasa',JSON.stringify(objtStaff));
+    window.location.href = "page2.html";
+}
+
+</script>
+</body>

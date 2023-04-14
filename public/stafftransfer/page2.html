@@ -1,0 +1,29 @@
+<head>
+<script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+</head>
+<body>
+
+<h1>page2</h1>
+
+<p>nama:</p>
+<input type="text" id="input_name"/>
+<p>no. kuasa pertukaran</p>
+<input type="text" id="input_kuasa"/>
+
+
+
+<script>
+  $(document).ready(function() {
+      var objtStaff=JSON.parse(sessionStorage.getItem('kuasa'))||{};
+      console.log(objtStaff);
+      $('#input_name').val(objtStaff.name);
+      $('#input_kuasa').val(objtStaff.kuasa);
+
+
+      objtStaff['norumah']=123456;
+      objtStaff['pegawai']=['123','456','789'];
+
+      console.log(objtStaff);
+})
+</script>
+</body>
